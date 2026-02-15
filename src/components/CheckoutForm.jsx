@@ -31,27 +31,56 @@ export default function CheckoutForm() {
         setStep(2);
     };
 
-    const handleLineOrderClick = () => {
+    const handleLineOrderClick = async () => {
         setIsLoading(true);
 
-        const itemsList = cart.map(item => {
-            const name = language === 'th' && item.name_th ? item.name_th : item.name;
-            return `- ${name} x${item.quantity}: $${(item.price * item.quantity).toFixed(2)}`;
-        }).join('\n');
-        const total = cartTotal.toFixed(2);
+        try {
+            // 1. Create Order via API
+            const orderData = {
+                customer: formData,
+                items: cart,
+                total: cartTotal
+            };
 
-        const message = `New Order from Golden Tier Peptide\n\nCustomer: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nAddress: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}\n\nItems:\n${itemsList}\n\nTotal: $${total}\n\nPlease confirm my order.`;
+            const response = await fetch('/api/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData),
+            });
 
-        const encodedMessage = encodeURIComponent(message);
-        const lineUrl = `https://line.me/R/msg/text/?${encodedMessage}`;
+            if (!response.ok) {
+                throw new Error('Failed to create order');
+            }
 
-        // Open LINE in new tab
-        window.open(lineUrl, '_blank');
+            const newOrder = await response.json();
+            const orderId = newOrder.id;
 
-        // Clear cart and redirect to success
-        clearCart();
-        router.push('/checkout/success');
-        setIsLoading(false);
+            // 2. Construct LINE Message with Order ID
+            const itemsList = cart.map(item => {
+                const name = language === 'th' && item.name_th ? item.name_th : item.name;
+                return `- ${name} x${item.quantity}: $${(item.price * item.quantity).toFixed(2)}`;
+            }).join('\n');
+            const total = cartTotal.toFixed(2);
+
+            const message = `New Order #${orderId}\n\nCustomer: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nAddress: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}\n\nItems:\n${itemsList}\n\nTotal: $${total}\n\nPlease confirm my order.`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const lineUrl = `https://line.me/R/msg/text/?${encodedMessage}`;
+
+            // 3. Open LINE in new tab
+            window.open(lineUrl, '_blank');
+
+            // 4. Clear cart and redirect to success
+            clearCart();
+            router.push(`/checkout/success?orderId=${orderId}`);
+        } catch (error) {
+            console.error('Order creation failed:', error);
+            alert('Something went wrong. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (

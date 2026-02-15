@@ -1,0 +1,43 @@
+[
+  {
+    "id": "ord_1771188480706_999g1",
+    "createdAt": "2026-02-15T20:48:00.706Z",
+    "status": "shipped",
+    "customer": {
+      "email": "test@example.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "address": "123 Test St",
+      "city": "Test City",
+      "state": "TS",
+      "zip": "12345"
+    },
+    "items": [
+      {
+        "id": "tr-10",
+        "name": "Tirzepatide (10mg)",
+        "name_th": "Tirzepatide (10mg)",
+        "price": 75,
+        "image": "/placeholder?text=Tirzepatide",
+        "quantity": 1
+      },
+      {
+        "id": "tr-60",
+        "name": "Tirzepatide (60mg)",
+        "name_th": "Tirzepatide (60mg)",
+        "price": 300,
+        "image": "/placeholder?text=Tirzepatide",
+        "quantity": 11
+      },
+      {
+        "id": "sm-5",
+        "name": "SemaglutideSemaglutide Plus (5mg)",
+        "name_th": "Semaglutide (5mg)",
+        "price": 50,
+        "image": "/placeholder?text=Semaglutidehttps://placehold.co/600x400?text=Semaglutide+Plus",
+        "quantity": 1
+      }
+    ],
+    "total": 3425
+  }
+]
