@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --primary: #0f4c3a;
+  /* Deep Jungle Green */
+  --primary-light: #1a6b54;
+  --primary-dark: #083326;
+
+  --accent: #d4af37;
+  /* Metallic Gold */
+  --accent-light: #eecf6d;
+  --accent-dark: #aa8c2c;
+
+  /* Neutrals */
+  --background: #f8f9fa;
+  /* Off-white / Porcelain */
+  --foreground: #1a1a1a;
+  /* Almost Black */
+  --surface: #ffffff;
+  --surface-alt: #f1f3f5;
+
+  --border: #e9ecef;
+  --input: #e9ecef;
+  --ring: #0f4c3a;
+
+  /* Functional */
+  --success: #2e7d32;
+  --warning: #ed6c02;
+  --error: #d32f2f;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-dark: var(--accent-dark);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050505;
+    --foreground: #ededed;
+    --surface: #0a0a0a;
+    --surface-alt: #171717;
+
+    --border: #262626;
+    --input: #262626;
+
+    --primary: #1a6b54;
+    --primary-light: #2e8b6b;
+    --primary-dark: #0f4c3a;
+
+    --ring: #1a6b54;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground);
+  /* Darker on hover */
+}

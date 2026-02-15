@@ -1,0 +1,1638 @@
+[
+  {
+    "id": "semaglutide",
+    "name": "SemaglutideSemaglutide Plus",
+    "name_th": "Semaglutide",
+    "description": "GLP-1 receptor agonist for weight management and blood sugar control.",
+    "description_th": "Semaglutide เป็นยาในกลุ่ม GLP-1 receptor agonist ที่เลียนแบบฮอร์โมนตามธรรมชาติ ช่วยลดความอยากอาหาร ควบคุมระดับน้ำตาลในเลือด และช่วยในการลดน้ำหนักอย่างมีประสิทธิภาพ",
+    "price": 50,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Semaglutidehttps://placehold.co/600x400?text=Semaglutide+Plus",
+    "benefits": [
+      "Appetite suppression",
+      "Weight loss support",
+      "Blood sugar regulation"
+    ],
+    "benefits_th": [
+      "ลดความอยากอาหาร",
+      "ช่วยลดน้ำหนัก",
+      "ควบคุมระดับน้ำตาลในเลือด"
+    ],
+    "variants": [
+      {
+        "id": "sm-5",
+        "name": "5mg",
+        "price": 50,
+        "quantity": "5mg * 10 vials",
+        "stock_status": "in_stock"
+      },
+      {
+        "id": "sm-10",
+        "name": "10mg",
+        "price": 70,
+        "quantity": "10mg * 10 vials",
+        "stock_status": "in_stock"
+      },
+      {
+        "id": "sm-15",
+        "name": "15mg",
+        "price": 90,
+        "quantity": "15mg * 10 vials",
+        "stock_status": "in_stock"
+      },
+      {
+        "id": "sm-20",
+        "name": "20mg",
+        "price": 110,
+        "quantity": "20mg * 10 vials",
+        "stock_status": "in_stock"
+      },
+      {
+        "id": "sm-30",
+        "name": "30mg",
+        "price": 140,
+        "quantity": "30mg * 10 vials",
+        "stock_status": "in_stock"
+      },
+      {
+        "id": "1771181109269",
+        "name": "2mg",
+        "price": 20,
+        "quantity": "2mg * 1 vial",
+        "stock_status": "in_stock"
+      }
+    ],
+    "purity": "99.9%",
+    "form": "Liquid",
+    "sequence": "",
+    "cas_number": "123-45-6",
+    "molar_mass": "",
+    "quantity": "",
+    "status": "available"
+  },
+  {
+    "id": "tirzepatide",
+    "name": "Tirzepatide",
+    "name_th": "Tirzepatide",
+    "description": "Dual GIP and GLP-1 receptor agonist for superior weight loss results.",
+    "description_th": "Tirzepatide ออกฤทธิ์สองทาง (Dual agonist) ทั้ง GIP และ GLP-1 ให้ผลลัพธ์การลดน้ำหนักที่ดีกว่าการใช้ GLP-1 เพียงอย่างเดียว ช่วยเร่งการเผาผลาญและลดความอยากอาหารสูงสุด",
+    "price": 50,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Tirzepatide",
+    "benefits": [
+      "Dual-action fat burning",
+      "Significant weight reduction",
+      "Improved insulin sensitivity"
+    ],
+    "benefits_th": [
+      "การเผาผลาญไขมันแบบคู่ขนาน",
+      "ลดน้ำหนักได้อย่างมีนัยสำคัญ",
+      "เพิ่มความไวต่ออินซูลิน"
+    ],
+    "variants": [
+      {
+        "id": "tr-5",
+        "name": "5mg",
+        "price": 50,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "tr-10",
+        "name": "10mg",
+        "price": 75,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "tr-15",
+        "name": "15mg",
+        "price": 100,
+        "quantity": "15mg * 10 vials"
+      },
+      {
+        "id": "tr-20",
+        "name": "20mg",
+        "price": 130,
+        "quantity": "20mg * 10 vials"
+      },
+      {
+        "id": "tr-30",
+        "name": "30mg",
+        "price": 155,
+        "quantity": "30mg * 10 vials"
+      },
+      {
+        "id": "tr-40",
+        "name": "40mg",
+        "price": 220,
+        "quantity": "40mg * 10 vials"
+      },
+      {
+        "id": "tr-45",
+        "name": "45mg",
+        "price": 250,
+        "quantity": "45mg * 10 vials"
+      },
+      {
+        "id": "tr-50",
+        "name": "50mg",
+        "price": 275,
+        "quantity": "50mg * 10 vials"
+      },
+      {
+        "id": "tr-60",
+        "name": "60mg",
+        "price": 300,
+        "quantity": "60mg * 10 vials"
+      },
+      {
+        "id": "tr-80",
+        "name": "80mg",
+        "price": 400,
+        "quantity": "80mg * 10 vials"
+      },
+      {
+        "id": "tr-100",
+        "name": "100mg",
+        "price": 460,
+        "quantity": "100mg * 10 vials"
+      }
+    ],
+    "purity": "",
+    "form": "",
+    "sequence": "",
+    "cas_number": "",
+    "molar_mass": "",
+    "quantity": "",
+    "status": "available"
+  },
+  {
+    "id": "retatrutide",
+    "name": "Retatrutide",
+    "name_th": "Retatrutide",
+    "description": "Triple agonist (GLP-1, GIP, Glucagon) - the 'King' of weight loss peptides.",
+    "description_th": "Retatrutide เปปไทด์ชนิดเก่งที่สุดแบบ 3 ฤทธิ์ (Triple Agonist) ออกฤทธิ์ต่อตัวรับ GLP-1, GIP และ Glucagon ช่วยเผาผลาญไขมันในระดับเซลล์และลดน้ำหนักได้สูงสุด",
+    "price": 85,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Retatrutide",
+    "benefits": [
+      "Triple-mechanism fat loss",
+      "Liver fat reduction",
+      "Maximum potency"
+    ],
+    "benefits_th": [
+      "กลไกสลายไขมัน 3 ทาง",
+      "ลดไขมันพอกตับ",
+      "ประสิทธิภาพสูงสุด"
+    ],
+    "variants": [
+      {
+        "id": "rt-5",
+        "name": "5mg",
+        "price": 85,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "rt-10",
+        "name": "10mg",
+        "price": 110,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "rt-15",
+        "name": "15mg",
+        "price": 165,
+        "quantity": "15mg * 10 vials"
+      },
+      {
+        "id": "rt-20",
+        "name": "20mg",
+        "price": 195,
+        "quantity": "20mg * 10 vials"
+      },
+      {
+        "id": "rt-30",
+        "name": "30mg",
+        "price": 270,
+        "quantity": "30mg * 10 vials"
+      },
+      {
+        "id": "rt-40",
+        "name": "40mg",
+        "price": 400,
+        "quantity": "40mg * 10 vials"
+      },
+      {
+        "id": "rt-50",
+        "name": "50mg",
+        "price": 450,
+        "quantity": "50mg * 10 vials"
+      },
+      {
+        "id": "rt-60",
+        "name": "60mg",
+        "price": 500,
+        "quantity": "60mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "cagrilintide",
+    "name": "Cagrilintide",
+    "name_th": "Cagrilintide",
+    "description": "Long-acting amylin analog for weight management.",
+    "description_th": "Cagrilintide เป็นอะนาล็อกของ Amylin ที่ออกฤทธิ์ยาวนาน ช่วยชะลอการย่อยอาหารและเพิ่มความอิ่ม",
+    "price": 90,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Cagrilintide",
+    "benefits": [
+      "Satiety enhancement",
+      "Weight loss",
+      "Synergistic with GLP-1"
+    ],
+    "benefits_th": [
+      "เพิ่มความอิ่ม",
+      "ลดน้ำหนัก",
+      "เสริมฤทธิ์กับ GLP-1"
+    ],
+    "variants": [
+      {
+        "id": "cgl-5",
+        "name": "5mg",
+        "price": 90,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "cgl-10",
+        "name": "10mg",
+        "price": 180,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "tesamorelin",
+    "name": "Tesamorelin",
+    "name_th": "Tesamorelin",
+    "description": "Targeted GHRH analog specifically effective for visceral fat reduction.",
+    "description_th": "Tesamorelin เป็น GHRH ที่โดดเด่นที่สุดในการลดไขมันช่องท้อง (Visceral Fat) และหน้าท้อง ช่วยให้หน้าท้องแบนราบพร้อมเสริมสร้างกล้ามเนื้อ",
+    "price": 90,
+    "category": "Weight & Muscle",
+    "image": "/placeholder?text=Tesamorelin",
+    "benefits": [
+      "Reduces belly fat",
+      "Increases muscle tone",
+      "Improves lipid profile"
+    ],
+    "benefits_th": [
+      "ลดไขมันหน้าท้อง",
+      "เพิ่มความกระชับกล้ามเนื้อ",
+      "ปรับปรุงค่าไขมันในเลือด"
+    ],
+    "variants": [
+      {
+        "id": "tsm-5",
+        "name": "5mg",
+        "price": 90,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "tsm-10",
+        "name": "10mg",
+        "price": 180,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "retatrutide-cagrilintide-blend",
+    "name": "Retatrutide + Cagrilintide Blend",
+    "name_th": "Retatrutide + Cagrilintide Blend",
+    "description": "Advanced stack combining Triple Agonist with Amylin analog for synergy.",
+    "description_th": "สูตรผสมขั้นเทพระหว่าง Retatrutide และ Cagrilintide ช่วยลดน้ำหนักพร้อมป้องกันการหยุดชะงัก (Weight Loss Plateau) ได้ดีเยี่ยม",
+    "price": 130,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Reta+Cagri",
+    "quantity": "10mg * 10 vials",
+    "benefits": [
+      "Synergistic weight loss",
+      "Combats tolerance",
+      "Deep appetite suppression"
+    ],
+    "benefits_th": [
+      "ลดน้ำหนักแบบประสานฤทธิ์",
+      "ป้องกันการดื้อยา",
+      "ระงับความอยากอาหารระดับลึก"
+    ],
+    "variants": [
+      {
+        "id": "rc-10",
+        "name": "5mg + 5mg (10mg Total)",
+        "price": 130,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "cagri-sema-blend",
+    "name": "CagriSema (Cagrilintide + Semaglutide)",
+    "name_th": "CagriSema (Cagrilintide + Semaglutide)",
+    "description": "Powerful combination of Semaglutide and long-acting Amylin analog.",
+    "description_th": "CagriSema คือการรวมพลังของ Semaglutide และ Cagrilintide ให้ผลลัพธ์การลดน้ำหนักที่เหนือกว่า Semaglutide เดี่ยวๆ อย่างชัดเจน",
+    "price": 105,
+    "category": "Weight Management",
+    "image": "/placeholder?text=CagriSema",
+    "benefits": [
+      "Superior efficacy to Mono-therapy",
+      "Fullness promotion",
+      "Targeted fat loss"
+    ],
+    "benefits_th": [
+      "ประสิทธิภาพเหนือกว่าแบบเดี่ยว",
+      "รู้สึกอิ่มเร็วขึ้น",
+      "ลดไขมันอย่างตรงจุด"
+    ],
+    "variants": [
+      {
+        "id": "cs-5",
+        "name": "5mg",
+        "price": 105,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "cs-10",
+        "name": "10mg",
+        "price": 190,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "ghk-cu",
+    "name": "GHK-Cu",
+    "name_th": "GHK-Cu (Copper Peptide)",
+    "description": "Copper peptide known for skin regeneration, collagen production, and wound healing.",
+    "description_th": "GHK-Cu หรือ Copper Peptide ช่วยกระตุ้นการสร้างคอลลาเจนและอีลาสติน ลดเลือนริ้วรอย และช่วยให้แผลหายเร็วขึ้น ผิวดูอ่อนเยาว์",
+    "price": 24,
+    "category": "Cosmetic & Repair",
+    "image": "/placeholder?text=GHK-Cu",
+    "benefits": [
+      "Skin tightening",
+      "Collagen synthesis",
+      "Anti-inflammatory"
+    ],
+    "benefits_th": [
+      "ผิวกระชับแน่น",
+      "สร้างคอลลาเจน",
+      "ลดการอักเสบของผิว"
+    ],
+    "variants": [
+      {
+        "id": "cu-50",
+        "name": "50mg",
+        "price": 24,
+        "quantity": "50mg * 10 vials"
+      },
+      {
+        "id": "cu-100",
+        "name": "100mg",
+        "price": 48,
+        "quantity": "100mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "epithalon",
+    "name": "Epithalon",
+    "name_th": "Epithalon (ยาอายุวัฒนะ)",
+    "description": "Telomere elongator known for extending lifespan and resetting biological rhythms.",
+    "description_th": "Epithalon ได้ชื่อว่าเป็นเปปไทด์ยาอายุวัฒนะ ช่วยยืดความยาวของเทโลเมียร์ (Telomere) ซึ่งเกี่ยวข้องโดยตรงกับการยืดอายุขัยและปรับสมดุลนาฬิกาชีวิต",
+    "price": 50,
+    "category": "Anti-Aging",
+    "image": "/placeholder?text=Epithalon",
+    "benefits": [
+      "Telomere extension",
+      "Circadian rhythm reset",
+      "Antioxidant"
+    ],
+    "benefits_th": [
+      "ยืดสายเทโลเมียร์",
+      "ปรับสมดุลการนอนหลับ",
+      "ต้านอนุมูลอิสระ"
+    ],
+    "variants": [
+      {
+        "id": "et-10",
+        "name": "10mg",
+        "price": 50,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "et-50",
+        "name": "50mg",
+        "price": 120,
+        "quantity": "50mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "mots-c",
+    "name": "MOTS-c",
+    "name_th": "MOTS-c (Mitochondrial Peptide)",
+    "description": "Mitochondrial derived peptide that mimics the metabolic effects of exercise.",
+    "description_th": "MOTS-c เปปไทด์จากไมโทคอนเดรียที่เลียนแบบผลของการออกกำลังกาย ช่วยควบคุมน้ำตาล ลดภาวะดื้ออินซูลิน และเพิ่มพลังงานระดับเซลล์",
+    "price": 50,
+    "category": "Anti-Aging & Energy",
+    "image": "/placeholder?text=MOTS-c",
+    "benefits": [
+      "Exercise mimetic",
+      "Insulin sensitivity",
+      "Cellular energy"
+    ],
+    "benefits_th": [
+      "เลียนแบบการออกกำลังกาย",
+      "ลดภาวะดื้ออินซูลิน",
+      "เพิ่มพลังงานเซลล์"
+    ],
+    "variants": [
+      {
+        "id": "ms-10",
+        "name": "10mg",
+        "price": 50,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "ms-40",
+        "name": "40mg",
+        "price": 180,
+        "quantity": "40mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "sermorelin",
+    "name": "Sermorelin Acetate",
+    "name_th": "Sermorelin Acetate",
+    "description": "GHRH analogue that stimulates the pituitary gland to release growth hormone.",
+    "description_th": "Sermorelin เป็น GHRH analogue ที่กระตุ้นต่อมใต้สมองให้หลั่งโกรทฮอร์โมนตามธรรมชาติ ช่วยในการนอนหลับและการฟื้นฟู",
+    "price": 50,
+    "category": "Anti-Aging & Muscle",
+    "image": "/placeholder?text=Sermorelin",
+    "benefits": [
+      "Improved sleep",
+      "Anti-aging",
+      "Recovery"
+    ],
+    "benefits_th": [
+      "การนอนหลับดีขึ้น",
+      "ชะลอวัย",
+      "การฟื้นฟูร่างกาย"
+    ],
+    "variants": [
+      {
+        "id": "smo-5",
+        "name": "5mg",
+        "price": 50,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "smo-10",
+        "name": "10mg",
+        "price": 95,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "melanotan-2",
+    "name": "MT-2 (Melanotan 2)",
+    "name_th": "MT-2 (Melanotan 2)",
+    "description": "Synthetic analog of alpha-melanocyte stimulating hormone for tanning and libido.",
+    "description_th": "Melanotan 2 เป็นเปปไทด์ที่ช่วยกระตุ้นการสร้างเม็ดสีผิว (Tanning) และยังช่วยเพิ่มความต้องการทางเพศอย่างมีประสิทธิภาพ",
+    "price": 40,
+    "category": "Cosmetic & Sexual Health",
+    "image": "/placeholder?text=MT-2",
+    "benefits": [
+      "Tanning without sun",
+      "Libido enhancement",
+      "Appetite suppression"
+    ],
+    "benefits_th": [
+      "ผิวแทนโดยไม่ต้องตากแดด",
+      "เพิ่มอารมณ์ทางเพศ",
+      "ลดความอยากอาหาร"
+    ],
+    "variants": [
+      {
+        "id": "ml-10",
+        "name": "10mg",
+        "price": 40,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "mt-1",
+        "name": "MT-1 10mg",
+        "price": 50,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "melanotan-1",
+    "name": "MT-1 (Melanotan 1)",
+    "name_th": "MT-1 (Melanotan 1)",
+    "description": "Analogue of alpha-MSH, primarily for safe tanning.",
+    "description_th": "Melanotan 1 เน้นการสร้างเม็ดสีผิว (Tanning) โดยมีผลข้างเคียงน้อยกว่า MT-2 เหมาะสำหรับผู้ที่ต้องการผิวแทน",
+    "price": 50,
+    "category": "Cosmetic",
+    "image": "/placeholder?text=MT-1",
+    "benefits": [
+      "Safe tanning",
+      "Photoprotection",
+      "Less side effects than MT-2"
+    ],
+    "benefits_th": [
+      "ผิวแทนปลอดภัย",
+      "ป้องกันแสงแดด",
+      "ผลข้างเคียงน้อยกว่า MT-2"
+    ],
+    "variants": [
+      {
+        "id": "mt-1",
+        "name": "10mg",
+        "price": 50,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "aod-9604",
+    "name": "AOD-9604",
+    "name_th": "AOD-9604",
+    "description": "Anti-Obesity Drug, a fragment of HGH that stimulates lipolysis.",
+    "description_th": "AOD-9604 เป็นส่วนหนึ่งของ HGH ที่ช่วยเผาผลาญไขมันโดยเฉพาะ โดยไม่ส่งผลต่อระดับน้ำตาลในเลือด",
+    "price": 100,
+    "category": "Weight Management",
+    "image": "/placeholder?text=AOD-9604",
+    "benefits": [
+      "Fat burning",
+      "Non-stimulant",
+      "Joint recovery"
+    ],
+    "benefits_th": [
+      "เผาผลาญไขมัน",
+      "ไม่กระตุ้นหัวใจ",
+      "ฟื้นฟูข้อต่อ"
+    ],
+    "variants": [
+      {
+        "id": "5ad",
+        "name": "5mg",
+        "price": 100,
+        "quantity": "5mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "cjc-1295-dac",
+    "name": "CJC-1295 DAC",
+    "name_th": "CJC-1295 DAC",
+    "description": "Long-acting GHRH with Drug Affinity Complex for extended half-life.",
+    "description_th": "CJC-1295 แบบมี DAC ออกฤทธิ์ยาวนานกว่า ช่วยเพิ่มระดับ GH ในเลือดอย่างต่อเนื่องนานหลายวัน",
+    "price": 140,
+    "category": "Muscle Growth",
+    "image": "/placeholder?text=CJC-DAC",
+    "benefits": [
+      "Sustained GH release",
+      "Convenient dosing",
+      "Muscle growth"
+    ],
+    "benefits_th": [
+      "ปล่อย GH ต่อเนื่อง",
+      "ฉีดน้อยครั้ง",
+      "สร้างกล้ามเนื้อ"
+    ],
+    "variants": [
+      {
+        "id": "cd-5",
+        "name": "5mg",
+        "price": 140,
+        "quantity": "5mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "cjc-1295-no-dac",
+    "name": "CJC-1295 (No DAC)",
+    "name_th": "CJC-1295 (No DAC)",
+    "description": "GHRH analog that mimics natural growth hormone pulses.",
+    "description_th": "CJC-1295 (No DAC) กระตุ้นการหลั่ง Growth Hormone แบบเป็นจังหวะธรรมชาติ ช่วยเพิ่มมวลกล้ามเนื้อและเผาผลาญไขมันโดยไม่รบกวนฮอร์โมนอื่น",
+    "price": 70,
+    "category": "Muscle Growth",
+    "image": "/placeholder?text=CJC-1295",
+    "benefits": [
+      "Lean muscle growth",
+      "Faster recovery",
+      "Improved sleep"
+    ],
+    "benefits_th": [
+      "สร้างกล้ามเนื้อไร้ไขมัน",
+      "ฟื้นตัวไว",
+      "หลับลึกขึ้น"
+    ],
+    "variants": [
+      {
+        "id": "cnd-5",
+        "name": "5mg",
+        "price": 70,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "cnd-10",
+        "name": "10mg",
+        "price": 130,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "cjc-ipa-blend",
+    "name": "CJC-1295 + Ipamorelin Blend",
+    "name_th": "CJC-1295 + Ipamorelin Blend",
+    "description": "The most popular anti-aging stack pre-blended for convenience.",
+    "description_th": "สูตรผสมยอดนิยม CJC-1295 และ Ipamorelin เพื่อการชะลอวัยและสร้างกล้ามเนื้อที่ลงตัวที่สุด",
+    "price": 80,
+    "category": "Anti-Aging & Muscle",
+    "image": "/placeholder?text=CJC+IPA",
+    "benefits": [
+      "Synergistic GH release",
+      "No water retention",
+      "Best for beginners"
+    ],
+    "benefits_th": [
+      "ปล่อย GH อย่างมีประสิทธิภาพ",
+      "ไม่บวมน้ำ",
+      "เหมาะสำหรับผู้เริ่มต้น"
+    ],
+    "variants": [
+      {
+        "id": "cp-10",
+        "name": "5mg + 5mg (10mg Total)",
+        "price": 80,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "ipamorelin",
+    "name": "Ipamorelin",
+    "name_th": "Ipamorelin",
+    "description": "Selective GH secretagogue, mild side effect profile, usually stacked with CJC.",
+    "description_th": "Ipamorelin เป็นตัวกระตุ้น GH ที่มีความจำเพาะสูง ผลข้างเคียงต่ำมาก นิยมใช้คู่กับ CJC-1295 เพื่อผลลัพธ์สูงสุดในการชะลอวัยและสร้างกล้ามเนื้อ",
+    "price": 30,
+    "category": "Anti-Aging & Muscle",
+    "image": "/placeholder?text=Ipamorelin",
+    "benefits": [
+      "Anti-aging properties",
+      "Fat loss",
+      "Collagen boost"
+    ],
+    "benefits_th": [
+      "ชะลอวัย",
+      "ลดไขมัน",
+      "กระตุ้นคอลลาเจน"
+    ],
+    "variants": [
+      {
+        "id": "ip-5",
+        "name": "5mg",
+        "price": 30,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "ip-10",
+        "name": "10mg",
+        "price": 60,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "bpc-157",
+    "name": "BPC-157",
+    "name_th": "BPC-157",
+    "description": "The gold standard peptide for healing tendons, ligaments, and gut health.",
+    "description_th": "BPC-157 เปปไทด์มหัศจรรย์สำหรับการรักษาเส้นเอ็น ข้อต่อ และกล้ามเนื้อ ช่วยเร่งกระบวนการซ่อมแซมร่างกายและรักษาแผลในกระเพาะอาหาร",
+    "price": 37,
+    "category": "Injury Repair",
+    "image": "/placeholder?text=BPC-157",
+    "benefits": [
+      "Accelerates tissue repair",
+      "Reduces inflammation",
+      "Potent gut healing"
+    ],
+    "benefits_th": [
+      "เร่งการซ่อมแซมเนื้อเยื่อ",
+      "ลดการอักเสบ",
+      "รักษาแผลในทางเดินอาหาร"
+    ],
+    "variants": [
+      {
+        "id": "bc-5",
+        "name": "5mg",
+        "price": 37,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "bc-10",
+        "name": "10mg",
+        "price": 70,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "tb-500",
+    "name": "TB-500",
+    "name_th": "TB-500",
+    "description": "Synthetic Thymosin Beta-4 promotes cellular migration and angiogenesis for healing.",
+    "description_th": "TB-500 ช่วยในการเคลื่อนที่ของเซลล์และการสร้างหลอดเลือดใหม่ จำเป็นอย่างยิ่งสำหรับการรักษาอาการบาดเจ็บของกล้ามเนื้อและการยืดหยุ่นของเนื้อเยื่อ",
+    "price": 65,
+    "category": "Injury Repair",
+    "image": "/placeholder?text=TB-500",
+    "benefits": [
+      "Muscle recovery",
+      "Improved flexibility",
+      "Reduces scar tissue"
+    ],
+    "benefits_th": [
+      "ฟื้นฟูกล้ามเนื้อ",
+      "เพิ่มความยืดหยุ่น",
+      "ลดการเกิดพังผืด"
+    ],
+    "variants": [
+      {
+        "id": "tb-5",
+        "name": "5mg",
+        "price": 65,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "tb-10",
+        "name": "10mg",
+        "price": 120,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "tb-10-tb4",
+        "name": "10mg (TB4 - Premium)",
+        "price": 130,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "bpc-tb-blend",
+    "name": "BPC-157 + TB-500 Blend",
+    "name_th": "BPC-157 + TB-500 Blend",
+    "description": "Convenient blend of the two most powerful healing peptides.",
+    "description_th": "การรวมตัวกันของเปปไทด์รักษาที่ดีที่สุด 2 ชนิดในขวดเดียว เพื่อความสะดวกและผลลัพธ์การรักษาที่ครอบคลุม",
+    "price": 80,
+    "category": "Injury Repair",
+    "image": "/placeholder?text=BPC+TB",
+    "benefits": [
+      "Comprehensive healing",
+      "Synergistic effect",
+      "Convenient"
+    ],
+    "benefits_th": [
+      "การรักษาที่ครอบคลุม",
+      "เสริมฤทธิ์กัน",
+      "สะดวกในการใช้"
+    ],
+    "variants": [
+      {
+        "id": "bb-10",
+        "name": "5mg + 5mg (10mg Total)",
+        "price": 80,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "bb-20",
+        "name": "10mg + 10mg (20mg Total)",
+        "price": 150,
+        "quantity": "20mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "glow-blend-70mg",
+    "name": "GLOW Blend 70mg",
+    "name_th": "GLOW Blend 70mg",
+    "description": "Powerful blend for systemic recovery and beauty (BPC 10mg + GHK-Cu 50mg + TB500 10mg).",
+    "description_th": "สูตร GLOW 70mg เข้มข้นด้วยส่วนผสม BPC-157, GHK-Cu และ TB-500 เพื่อการฟื้นฟูขั้นสูงสุด",
+    "price": 160,
+    "category": "Injury & Cosmetic",
+    "image": "/placeholder?text=GLOW+70",
+    "benefits": [
+      "Total body repair",
+      "Skin health",
+      "High concentration"
+    ],
+    "benefits_th": [
+      "ซ่อมแซมร่างกาย",
+      "สุขภาพผิว",
+      "ความเข้มข้นสูง"
+    ],
+    "variants": [
+      {
+        "id": "bbg-70",
+        "name": "70mg",
+        "price": 160,
+        "quantity": "70mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "gkp-blend",
+    "name": "GKP Blend (GHK-Cu, KPV, BPC)",
+    "name_th": "GKP Blend",
+    "description": "Unique blend of GHK-Cu, KPV, and BPC-157 for anti-inflammation and skin.",
+    "description_th": "ส่วนผสมพิเศษของ GHK-Cu, KPV และ BPC-157 เน้นการลดอักเสบและบำรุงผิวพรรณ",
+    "price": 148,
+    "category": "Cosmetic & Repair",
+    "image": "/placeholder?text=GKP",
+    "benefits": [
+      "Anti-inflammatory",
+      "Skin health",
+      "Gut health"
+    ],
+    "benefits_th": [
+      "ต้านการอักเสบ",
+      "สุขภาพผิว",
+      "สุขภาพลำไส้"
+    ],
+    "variants": [
+      {
+        "id": "gkp-70",
+        "name": "70mg",
+        "price": 148,
+        "quantity": "70mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "klow-blend",
+    "name": "KLOW Blend",
+    "name_th": "KLOW Blend (GLOW + KPV)",
+    "description": "The GLOW blend enhanced with KPV for extra antimicrobial and anti-inflammatory properties.",
+    "description_th": "สูตร KLOW คือสูตร GLOW ที่เพิ่ม KPV เข้าไป เพื่อประสิทธิภาพในการต้านเชื้อจุลชีพและลดการอักเสบที่ดียิ่งขึ้น",
+    "price": 180,
+    "category": "Injury & Cosmetic",
+    "image": "/placeholder?text=KLOW",
+    "benefits": [
+      "Ultimate restoration",
+      "Antimicrobial",
+      "Maximal recovery"
+    ],
+    "benefits_th": [
+      "การฟื้นฟูขีดสุด",
+      "ต้านเชื้อโรค",
+      "การรักษาเต็มรูปแบบ"
+    ],
+    "variants": [
+      {
+        "id": "bbgk",
+        "name": "80mg",
+        "price": 180,
+        "quantity": "80mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "glow-50",
+    "name": "GLOW 50mg",
+    "name_th": "GLOW 50mg",
+    "description": "Balanced GLOW blend (Cu:35 + TB:10 + BPC:5).",
+    "description_th": "สูตร GLOW ขนาด 50mg สัดส่วนที่สมดุลสำหรับการบำรุงทั่วไป",
+    "price": 180,
+    "category": "Injury & Cosmetic",
+    "image": "/placeholder?text=GLOW+50",
+    "benefits": [
+      "Balanced recovery",
+      "Skin maintenance",
+      "Daily support"
+    ],
+    "benefits_th": [
+      "การฟื้นฟูสมดุล",
+      "ดูแลผิวพรรณ",
+      "บำรุงประจำวัน"
+    ],
+    "variants": [
+      {
+        "id": "glow-50",
+        "name": "50mg",
+        "price": 180,
+        "quantity": "50mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "nad-plus",
+    "name": "NAD+",
+    "name_th": "NAD+",
+    "description": "Essential coenzyme for cellular health, DNA repair, and energy production. Shipped separately.",
+    "description_th": "NAD+ โคเอนไซม์สำคัญเพื่อชะลอวัยและเพิ่มพลังงาน (จัดส่งแยกต่างหาก)",
+    "price": 90,
+    "category": "Anti-Aging",
+    "image": "/placeholder?text=NAD+",
+    "benefits": [
+      "DNA repair",
+      "Brain energy",
+      "Anti-aging"
+    ],
+    "benefits_th": [
+      "ซ่อมแซม DNA",
+      "พลังงานสมอง",
+      "ชะลอวัย"
+    ],
+    "variants": [
+      {
+        "id": "nj-500",
+        "name": "500mg",
+        "price": 90,
+        "quantity": "500mg * 10 vials"
+      },
+      {
+        "id": "nj-1000",
+        "name": "1000mg",
+        "price": 150,
+        "quantity": "1000mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "hgh-generic",
+    "name": "HGH Generic",
+    "name_th": "HGH Generic",
+    "description": "Standard Human Growth Hormone.",
+    "description_th": "โกรทฮอร์โมนมาตรฐานเพื่อการเจริญเติบโตและฟื้นฟู",
+    "price": 50,
+    "category": "Anti-Aging & Muscle",
+    "image": "/placeholder?text=HGH",
+    "benefits": [
+      "Growth",
+      "Recovery",
+      "Vitality"
+    ],
+    "benefits_th": [
+      "การเจริญเติบโต",
+      "การฟื้นฟู",
+      "ความมีชีวิตชีวา"
+    ],
+    "variants": [
+      {
+        "id": "h-10",
+        "name": "10iu",
+        "price": 50,
+        "quantity": "10iu * 10 vials"
+      },
+      {
+        "id": "h-15",
+        "name": "15iu",
+        "price": 70,
+        "quantity": "15iu * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "hgh-customize",
+    "name": "HGH Customize",
+    "name_th": "HGH Customize",
+    "description": "High dose customized HGH.",
+    "description_th": "โกรทฮอร์โมนสั่งทำพิเศษความเข้มข้นสูง",
+    "price": 130,
+    "category": "Anti-Aging & Muscle",
+    "image": "/placeholder?text=HGH+Custom",
+    "benefits": [
+      "High potency",
+      "Advanced use",
+      "Maximal results"
+    ],
+    "benefits_th": [
+      "ประสิทธิภาพสูง",
+      "ผู้ใช้ระดับสูง",
+      "ผลลัพธ์สูงสุด"
+    ],
+    "variants": [
+      {
+        "id": "h-24",
+        "name": "24iu",
+        "price": 130,
+        "quantity": "24iu * 10 vials"
+      },
+      {
+        "id": "h-36",
+        "name": "36iu",
+        "price": 185,
+        "quantity": "36iu * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "hcg",
+    "name": "HCG",
+    "name_th": "HCG",
+    "description": "Human Chorionic Gonadotropin for PCT and fertility.",
+    "description_th": "HCG ช่วยกระตุ้นการผลิตฮอร์โมนธรรมชาติและรักษาภาวะเจริญพันธุ์",
+    "price": 75,
+    "category": "Sexual Health",
+    "image": "/placeholder?text=HCG",
+    "benefits": [
+      "Fertility",
+      "PCT support",
+      "Testosterone recovery"
+    ],
+    "benefits_th": [
+      "ภาวะเจริญพันธุ์",
+      "ฟื้นฟูหลังวัฏจักร",
+      "กู้คืนเทสโทสเตอโรน"
+    ],
+    "variants": [
+      {
+        "id": "g5k",
+        "name": "5000iu",
+        "price": 75,
+        "quantity": "5000iu * 10 vials"
+      },
+      {
+        "id": "g10k",
+        "name": "10000iu",
+        "price": 120,
+        "quantity": "10000iu * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "slu-pp-332",
+    "name": "SLU-PP-332",
+    "name_th": "SLU-PP-332",
+    "description": "Exercise mimetic that increases endurance and fat oxidation.",
+    "description_th": "โมเลกุลเลียนแบบการออกกำลังกาย เพิ่มความอึดและเผาผลาญไขมัน",
+    "price": 120,
+    "category": "Weight & Energy",
+    "image": "/placeholder?text=SLU-PP-332",
+    "benefits": [
+      "Endurance",
+      "Fat oxidation",
+      "Metabolic health"
+    ],
+    "benefits_th": [
+      "ความอึด",
+      "เผาผลาญไขมัน",
+      "สุขภาพเมตาบอลิก"
+    ],
+    "variants": [
+      {
+        "id": "332",
+        "name": "5mg",
+        "price": 120,
+        "quantity": "5mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "thymosin-alpha-1",
+    "name": "Thymosin Alpha-1",
+    "name_th": "Thymosin Alpha-1",
+    "description": "Immune modulating peptide to fortify body defenses.",
+    "description_th": "Thymosin Alpha-1 เปปไทด์เสริมภูมิคุ้มกัน ช่วยกระตุ้น T-Cells",
+    "price": 65,
+    "category": "Health & Immunity",
+    "image": "/placeholder?text=Thymosin",
+    "benefits": [
+      "Boosts immunity",
+      "Anti-viral properties",
+      "Health optimization"
+    ],
+    "benefits_th": [
+      "เสริมภูมิคุ้มกัน",
+      "ต้านไวรัส",
+      "สุขภาพแข็งแรง"
+    ],
+    "variants": [
+      {
+        "id": "ta-5",
+        "name": "5mg",
+        "price": 65,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "ta-10",
+        "name": "10mg",
+        "price": 130,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "ss-31",
+    "name": "SS-31",
+    "name_th": "SS-31",
+    "description": "Targeted mitochondrial antioxidant.",
+    "description_th": "เปปไทด์ฟื้นฟูไมโทคอนเดรีย",
+    "price": 75,
+    "category": "Anti-Aging",
+    "image": "/placeholder?text=SS-31",
+    "benefits": [
+      "Mitochondrial repair",
+      "Energy",
+      "Organ health"
+    ],
+    "benefits_th": [
+      "ซ่อมแซมไมโทคอนเดรีย",
+      "พลังงาน",
+      "สุขภาพอวัยวะ"
+    ],
+    "variants": [
+      {
+        "id": "2s-10",
+        "name": "10mg",
+        "price": 75,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "2s-50",
+        "name": "50mg",
+        "price": 350,
+        "quantity": "50mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "glutathione",
+    "name": "Glutathione",
+    "name_th": "Glutathione",
+    "description": "Master antioxidant.",
+    "description_th": "สารต้านอนุมูลอิสระหลัก",
+    "price": 100,
+    "category": "Anti-Aging",
+    "image": "/placeholder?text=Glutathione",
+    "benefits": [
+      "Detox",
+      "Skin whitening"
+    ],
+    "benefits_th": [
+      "ดีท็อกซ์",
+      "ผิวขาว"
+    ],
+    "variants": [
+      {
+        "id": "gtt",
+        "name": "1500mg",
+        "price": 100,
+        "quantity": "1500mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "snap-8",
+    "name": "Snap-8",
+    "name_th": "Snap-8",
+    "description": "Anti-wrinkle peptide.",
+    "description_th": "เปปไทด์ลดริ้วรอย",
+    "price": 40,
+    "category": "Cosmetic",
+    "image": "/placeholder?text=Snap-8",
+    "benefits": [
+      "Reduce wrinkles",
+      "Botox-like"
+    ],
+    "benefits_th": [
+      "ลดริ้วรอย",
+      "คล้ายโบท็อกซ์"
+    ],
+    "variants": [
+      {
+        "id": "np8-10",
+        "name": "10mg",
+        "price": 40,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "kpv",
+    "name": "KPV",
+    "name_th": "KPV",
+    "description": "Potent anti-inflammatory peptide.",
+    "description_th": "เปปไทด์ต้านการอักเสบ",
+    "price": 35,
+    "category": "Health",
+    "image": "/placeholder?text=KPV",
+    "benefits": [
+      "Anti-inflammatory",
+      "Gut health"
+    ],
+    "benefits_th": [
+      "ต้านอักเสบ",
+      "สุขภาพลำไส้"
+    ],
+    "variants": [
+      {
+        "id": "kpv-5",
+        "name": "5mg",
+        "price": 35,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "kpv-10",
+        "name": "10mg",
+        "price": 55,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "lemon-bottle",
+    "name": "Lemon Bottle",
+    "name_th": "Lemon Bottle",
+    "description": "Fat dissolver.",
+    "description_th": "สลายไขมัน",
+    "price": 70,
+    "category": "Cosmetic",
+    "image": "/placeholder?text=Lemon",
+    "benefits": [
+      "Fat loss",
+      "Natural"
+    ],
+    "benefits_th": [
+      "สลายไขมัน",
+      "ธรรมชาติ"
+    ],
+    "variants": [
+      {
+        "id": "lemon",
+        "name": "10mg",
+        "price": 70,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "semax",
+    "name": "Semax",
+    "name_th": "Semax",
+    "description": "Nootropic for focus.",
+    "description_th": "ยาบำรุงสมองเพิ่มสมาธิ",
+    "price": 40,
+    "category": "Cognitive",
+    "image": "/placeholder?text=Semax",
+    "benefits": [
+      "Focus",
+      "Memory"
+    ],
+    "benefits_th": [
+      "สมาธิ",
+      "ความจำ"
+    ],
+    "variants": [
+      {
+        "id": "xa-5",
+        "name": "5mg",
+        "price": 40,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "xa-11",
+        "name": "10mg",
+        "price": 70,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "selank",
+    "name": "Selank",
+    "name_th": "Selank",
+    "description": "Anxiolytic peptide.",
+    "description_th": "เปปไทด์คลายกังวล",
+    "price": 40,
+    "category": "Cognitive",
+    "image": "/placeholder?text=Selank",
+    "benefits": [
+      "Calm",
+      "Anxiety relief"
+    ],
+    "benefits_th": [
+      "สงบ",
+      "คลายเครียด"
+    ],
+    "variants": [
+      {
+        "id": "sk-5",
+        "name": "5mg",
+        "price": 40,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "sk-11",
+        "name": "10mg",
+        "price": 80,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "igf-1-lr3",
+    "name": "IGF-1 LR3",
+    "name_th": "IGF-1 LR3",
+    "description": "Muscle growth factor.",
+    "description_th": "ปัจจัยการเติบโตกล้ามเนื้อ",
+    "price": 34,
+    "category": "Muscle Growth",
+    "image": "/placeholder?text=IGF",
+    "benefits": [
+      "Muscle size",
+      "Pumps"
+    ],
+    "benefits_th": [
+      "ขนาดกล้ามเนื้อ",
+      "ความอิ่ม"
+    ],
+    "variants": [
+      {
+        "id": "ig01",
+        "name": "0.1mg",
+        "price": 34,
+        "quantity": "0.1mg * 10 vials"
+      },
+      {
+        "id": "ig1",
+        "name": "1mg",
+        "price": 200,
+        "quantity": "1mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "vip5",
+    "name": "VIP",
+    "name_th": "VIP",
+    "description": "Vasoactive Intestinal Peptide.",
+    "description_th": "เปปไทด์ขยายหลอดเลือด",
+    "price": 75,
+    "category": "Health",
+    "image": "/placeholder?text=VIP",
+    "benefits": [
+      "Anti-inflammatory",
+      "Gut health"
+    ],
+    "benefits_th": [
+      "ต้านอักเสบ",
+      "สุขภาพลำไส้"
+    ],
+    "variants": [
+      {
+        "id": "vip-5",
+        "name": "5mg",
+        "price": 75,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "vip-10",
+        "name": "10mg",
+        "price": 140,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "pt-141",
+    "name": "PT-141",
+    "name_th": "PT-141",
+    "description": "Libido enhancer.",
+    "description_th": "เพิ่มอารมณ์ทางเพศ",
+    "price": 55,
+    "category": "Sexual Health",
+    "image": "/placeholder?text=PT-141",
+    "benefits": [
+      "Libido"
+    ],
+    "benefits_th": [
+      "อารมณ์ทางเพศ"
+    ],
+    "variants": [
+      {
+        "id": "p41",
+        "name": "10mg",
+        "price": 55,
+        "quantity": "10mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "dsip",
+    "name": "DSIP",
+    "name_th": "DSIP",
+    "description": "Sleep peptide.",
+    "description_th": "เปปไทด์ช่วยนอนหลับ",
+    "price": 50,
+    "category": "Sleep",
+    "image": "/placeholder?text=DSIP",
+    "benefits": [
+      "Deep sleep"
+    ],
+    "benefits_th": [
+      "หลับลึก"
+    ],
+    "variants": [
+      {
+        "id": "ds-5",
+        "name": "5mg",
+        "price": 50,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "ds-15",
+        "name": "15mg",
+        "price": 140,
+        "quantity": "15mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "ghrp-6",
+    "name": "GHRP-6",
+    "name_th": "GHRP-6",
+    "description": "GH secretagogue that increases appetite.",
+    "description_th": "กระตุ้น GH และความอยากอาหาร",
+    "price": 20,
+    "category": "Muscle Growth",
+    "image": "/placeholder?text=GHRP6",
+    "benefits": [
+      "Appetite",
+      "Growth"
+    ],
+    "benefits_th": [
+      "ความอยากอาหาร",
+      "การเติบโต"
+    ],
+    "variants": [
+      {
+        "id": "g65",
+        "name": "5mg",
+        "price": 20,
+        "quantity": "5mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "5-amino-1mq",
+    "name": "5-Amino-1MQ",
+    "name_th": "5-Amino-1MQ",
+    "description": "Metabolism booster.",
+    "description_th": "เร่งการเผาผลาญ",
+    "price": 65,
+    "category": "Weight Management",
+    "image": "/placeholder?text=5-Amino",
+    "benefits": [
+      "Metabolism",
+      "Fat loss"
+    ],
+    "benefits_th": [
+      "การเผาผลาญ",
+      "ลดไขมัน"
+    ],
+    "variants": [
+      {
+        "id": "5am",
+        "name": "5mg",
+        "price": 65,
+        "quantity": "5mg * 10 vials"
+      },
+      {
+        "id": "50am",
+        "name": "50mg",
+        "price": 100,
+        "quantity": "50mg * 10 vials"
+      }
+    ]
+  },
+  {
+    "id": "super-human-blend-injectable",
+    "name": "Super Human Blend (Injectable)",
+    "name_th": "Super Human Blend",
+    "description": "Blend of aminos for performance.",
+    "description_th": "รวมกรดอะมิโนเพื่อสมรรถภาพ",
+    "price": 150,
+    "category": "Injectable Vitamins",
+    "image": "/placeholder?text=SHB",
+    "benefits": [
+      "Performance"
+    ],
+    "benefits_th": [
+      "สมรรถภาพ"
+    ],
+    "variants": [
+      {
+        "id": "shb",
+        "name": "10ml",
+        "price": 150,
+        "quantity": "10ml * 1 vial"
+      }
+    ]
+  },
+  {
+    "name": "Final Test Product",
+    "name_th": "Final Test Product",
+    "description": "Verifying persistence",
+    "description_th": "Verifying persistence",
+    "price": 199.99,
+    "category": "Weight Management",
+    "benefits": [],
+    "variants": [],
+    "id": "prod-1771170847335"
+  },
+  {
+    "name": "Edited Product",
+    "name_th": "",
+    "description": "This is the edited product.",
+    "description_th": "",
+    "price": 50,
+    "category": "Anti-Aging",
+    "benefits": [],
+    "variants": [],
+    "id": "prod-1771172738381",
+    "nameEn": "Edited Product",
+    "nameTh": "สินค้าที่แก้ไขแล้ว"
+  },
+  {
+    "id": "semaglutide",
+    "name": "SemaglutideSemaglutide Plus",
+    "name_th": "Semaglutide",
+    "description": "GLP-1 receptor agonist for weight management and blood sugar control.",
+    "description_th": "Semaglutide เป็นยาในกลุ่ม GLP-1 receptor agonist ที่เลียนแบบฮอร์โมนตามธรรมชาติ ช่วยลดความอยากอาหาร ควบคุมระดับน้ำตาลในเลือด และช่วยในการลดน้ำหนักอย่างมีประสิทธิภาพ",
+    "price": 50,
+    "category": "Weight Management",
+    "image": "/placeholder?text=Semaglutidehttps://placehold.co/600x400?text=Semaglutide+Plus",
+    "benefits": [
+      "Appetite suppression",
+      "Weight loss support",
+      "Blood sugar regulation",
+      "Test Benefit EN"
+    ],
+    "benefits_th": [
+      "ลดความอยากอาหาร",
+      "ช่วยลดน้ำหนัก",
+      "ควบคุมระดับน้ำตาลในเลือด",
+      "Test Benefit TH"
+    ],
+    "variants": [
+      {
+        "id": "sm-5",
+        "name": "5mg",
+        "price": 50,
+        "quantity": "5mg * 10 vials",
+        "stockStatus": "out_of_stock"
+      },
+      {
+        "id": "sm-10",
+        "name": "10mg",
+        "price": 70,
+        "quantity": "10mg * 10 vials"
+      },
+      {
+        "id": "sm-15",
+        "name": "15mg",
+        "price": 90,
+        "quantity": "15mg * 10 vials"
+      },
+      {
+        "id": "sm-20",
+        "name": "20mg",
+        "price": 110,
+        "quantity": "20mg * 10 vials"
+      },
+      {
+        "id": "sm-30",
+        "name": "30mg",
+        "price": 140,
+        "quantity": "30mg * 10 vials"
+      },
+      {
+        "id": "1771181109269",
+        "name": "2mg",
+        "price": 20,
+        "quantity": "2mg * 1 vial",
+        "stockStatus": "coming_soon"
+      }
+    ],
+    "purity": "99.9%",
+    "form": "Liquid",
+    "sequence": "",
+    "cas_number": "123-45-6",
+    "molar_mass": "",
+    "quantity": "",
+    "status": "preorder"
+  }
+]
