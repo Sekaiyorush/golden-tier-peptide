@@ -13,6 +13,7 @@ export default function CheckoutForm() {
     const [isLoading, setIsLoading] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
+        phone: '',
         firstName: '',
         lastName: '',
         address: '',
@@ -37,7 +38,7 @@ export default function CheckoutForm() {
         try {
             // 1. Create Order via API
             const orderData = {
-                customer: formData,
+                shippingInfo: formData, // Updated to match API expectation
                 items: cart,
                 total: cartTotal
             };
@@ -64,7 +65,7 @@ export default function CheckoutForm() {
             }).join('\n');
             const total = cartTotal.toFixed(2);
 
-            const message = `New Order #${orderId}\n\nCustomer: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nAddress: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}\n\nItems:\n${itemsList}\n\nTotal: $${total}\n\nPlease confirm my order.`;
+            const message = `New Order #${orderId}\n\nCustomer: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}\n\nItems:\n${itemsList}\n\nTotal: $${total}\n\nPlease confirm my order.`;
 
             const encodedMessage = encodeURIComponent(message);
             const lineUrl = `https://line.me/R/msg/text/?${encodedMessage}`;
@@ -106,18 +107,33 @@ export default function CheckoutForm() {
                 <form onSubmit={handleSubmitShipping} className="space-y-6 animate-in slide-in-from-left duration-300">
                     <div className="space-y-4">
                         <h2 className="text-xl font-semibold">{t('checkout.contactInfo')}</h2>
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('checkout.email')}</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                className="mt-1 block w-full rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border"
-                                placeholder="you@example.com"
-                                value={formData.email}
-                                onChange={handleChange}
-                            />
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('checkout.email')}</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    className="mt-1 block w-full rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border"
+                                    placeholder="you@example.com"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    className="mt-1 block w-full rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border"
+                                    placeholder="081-234-5678"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                />
+                            </div>
                         </div>
                     </div>
 

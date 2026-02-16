@@ -2,11 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useSession, signOut } from 'next-auth/react';
 import { useCart } from '@/context/CartContext';
 import { useLanguage } from '@/context/LanguageContext';
 import SearchBar from './SearchBar';
 
 const Header = () => {
+    const { data: session } = useSession();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { toggleCart, cartCount } = useCart();
     const { language, toggleLanguage, t } = useLanguage();
@@ -67,12 +69,27 @@ const Header = () => {
                             </span>
                         )}
                     </button>
-                    <Link
-                        href="/login"
-                        className="hidden md:inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    >
-                        {t('header.signIn')}
-                    </Link>
+
+                    {session ? (
+                        <div className="hidden md:flex items-center gap-4">
+                            <Link href="/account" className="text-sm font-medium hover:text-primary">
+                                {session.user.name || "Profile"}
+                            </Link>
+                            <button
+                                onClick={() => signOut({ callbackUrl: '/' })}
+                                className="text-sm font-medium hover:text-red-600 transition-colors"
+                            >
+                                Sign Out
+                            </button>
+                        </div>
+                    ) : (
+                        <Link
+                            href="/login"
+                            className="hidden md:inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-dark focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                        >
+                            {t('header.signIn')}
+                        </Link>
+                    )}
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -107,13 +124,34 @@ const Header = () => {
                                 <span>{language.toUpperCase()}</span>
                             </button>
                         </div>
-                        <Link
-                            href="/login"
-                            className="flex w-full h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-dark"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            {t('header.signIn')}
-                        </Link>
+                        {session ? (
+                            <>
+                                <Link
+                                    href="/account"
+                                    className="block w-full py-2 text-sm font-medium hover:text-primary"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    My Account
+                                </Link>
+                                <button
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        signOut({ callbackUrl: '/' });
+                                    }}
+                                    className="block w-full text-left py-2 text-sm font-medium text-red-600 hover:text-red-700"
+                                >
+                                    Sign Out
+                                </button>
+                            </>
+                        ) : (
+                            <Link
+                                href="/login"
+                                className="flex w-full h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-primary-dark"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {t('header.signIn')}
+                            </Link>
+                        )}
                     </nav>
                 </div>
             )}

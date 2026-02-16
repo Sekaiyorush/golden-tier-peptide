@@ -8,7 +8,7 @@ const LanguageContext = createContext();
 export function LanguageProvider({ children }) {
     const [language, setLanguage] = useState('th'); // Default to Thai
 
-    const t = (path) => {
+    const t = (path, params = {}) => {
         const keys = path.split('.');
         let value = translations[language];
         for (const key of keys) {
@@ -18,6 +18,14 @@ export function LanguageProvider({ children }) {
                 return path; // Fallback to key if not found
             }
         }
+
+        // Perform interpolation
+        if (typeof value === 'string' && Object.keys(params).length > 0) {
+            Object.keys(params).forEach(key => {
+                value = value.replace(`{${key}}`, params[key]);
+            });
+        }
+
         return value;
     };
 

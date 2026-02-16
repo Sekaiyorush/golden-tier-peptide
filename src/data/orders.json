@@ -39,5 +39,30 @@
       }
     ],
     "total": 3425
+  },
+  {
+    "id": "ord_1771235484557_7thdn",
+    "createdAt": "2026-02-16T09:51:24.557Z",
+    "status": "pending",
+    "customer": {
+      "email": "",
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "city": "Bangkok",
+      "state": "Pathum Wan",
+      "zip": "10330"
+    },
+    "items": [
+      {
+        "id": "rt-5",
+        "name": "Retatrutide (5mg)",
+        "name_th": "Retatrutide (5mg)",
+        "price": 85,
+        "image": "/placeholder?text=Retatrutide",
+        "quantity": 1
+      }
+    ],
+    "total": 85
   }
 ]
