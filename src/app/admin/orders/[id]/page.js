@@ -42,7 +42,11 @@ export default function OrderDetailsPage({ params }) {
 
             if (res.ok) {
                 const updatedOrder = await res.json();
-                setOrder(updatedOrder);
+                // Merge with existing order to keep shippingInfo/items which might not be in response if not refetched fully
+                // Or just refetch. But the PUT response usually returns the updated record.
+                // If PUT returns just the prisma record, shippingInfo/items will be strings.
+                // Safer to just re-fetch or manually update local state.
+                setOrder(prev => ({ ...prev, status: newStatus }));
             }
         } catch (error) {
             console.error('Failed to update status', error);
@@ -55,6 +59,8 @@ export default function OrderDetailsPage({ params }) {
     if (isLoading) return <div className="p-8">Loading...</div>;
     if (!order) return <div className="p-8">Order not found</div>;
 
+    const customer = order.shippingInfo || {};
+
     return (
         <div className="space-y-6 max-w-4xl">
             <div className="flex items-center justify-between">
@@ -62,7 +68,7 @@ export default function OrderDetailsPage({ params }) {
                     <Link href="/admin/orders" className="text-gray-500 hover:text-gray-900">
                         &larr; Back to Orders
                     </Link>
-                    <h1 className="text-3xl font-bold tracking-tight">Order #{order.id}</h1>
+                    <h1 className="text-3xl font-bold tracking-tight">Order #{order.id.slice(-8)}</h1>
                 </div>
                 <div className="flex items-center space-x-2">
                     <span className="text-sm text-gray-500">Status:</span>
@@ -87,17 +93,21 @@ export default function OrderDetailsPage({ params }) {
                     <div className="space-y-3 text-sm">
                         <div>
                             <span className="block text-gray-500">Name</span>
-                            <span className="font-medium">{order.customer?.firstName} {order.customer?.lastName}</span>
+                            <span className="font-medium">{customer.firstName} {customer.lastName}</span>
                         </div>
                         <div>
                             <span className="block text-gray-500">Email</span>
-                            <span className="font-medium">{order.customer?.email}</span>
+                            <span className="font-medium">{customer.email}</span>
+                        </div>
+                        <div>
+                            <span className="block text-gray-500">Phone</span>
+                            <span className="font-medium">{customer.phone}</span>
                         </div>
                         <div>
                             <span className="block text-gray-500">Address</span>
                             <span className="font-medium">
-                                {order.customer?.address}<br />
-                                {order.customer?.city}, {order.customer?.state} {order.customer?.zip}
+                                {customer.address}<br />
+                                {customer.city}, {customer.state} {customer.zip}
                             </span>
                         </div>
                     </div>
@@ -115,6 +125,12 @@ export default function OrderDetailsPage({ params }) {
                             <span className="text-gray-500">Total Amount</span>
                             <span className="font-bold text-lg">${Number(order.total).toFixed(2)}</span>
                         </div>
+                        {order.user && (
+                            <div className="flex justify-between pt-2 border-t">
+                                <span className="text-gray-500">Registered User</span>
+                                <span className="font-medium">{order.user.name}</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -128,8 +144,9 @@ export default function OrderDetailsPage({ params }) {
                     {order.items?.map((item, index) => (
                         <li key={index} className="px-6 py-4 flex items-center justify-between">
                             <div className="flex items-center">
+                                {/* Placeholder image or real image if available */}
                                 <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-md border bg-gray-100 flex items-center justify-center">
-                                    <span className="text-xs text-gray-500">Img</span>
+                                    <span className="text-xs text-gray-500">Item</span>
                                 </div>
                                 <div className="ml-4">
                                     <div className="font-medium text-gray-900">{item.name}</div>

@@ -4,18 +4,34 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { products } from "@/data/products"; // Initially load from file, but ideally fetch from API
+import { products } from "@/data/products"; // Loading products for count
 
-export default function AdminPage() {
+export default function AdminDashboard() {
     const { data: session, status } = useSession();
     const router = useRouter();
-    const [productList, setProductList] = useState(products);
+    const [stats, setStats] = useState({
+        totalSales: 0,
+        totalOrders: 0,
+        totalProducts: products.length,
+        totalCustomers: 0
+    });
 
     useEffect(() => {
         if (status === "unauthenticated") {
             router.push("/api/auth/signin");
         }
     }, [status, router]);
+
+    // Mock fetching stats
+    useEffect(() => {
+        // In a real app, fetch from /api/admin/stats
+        setStats(prev => ({
+            ...prev,
+            totalSales: 15420,
+            totalOrders: 24,
+            totalCustomers: 12
+        }));
+    }, []);
 
     if (status === "loading") {
         return <p className="p-10 text-center">Loading...</p>;
@@ -25,80 +41,51 @@ export default function AdminPage() {
         return null;
     }
 
-    const handleDelete = async (id) => {
-        if (confirm("Are you sure you want to delete this product?")) {
-            const res = await fetch(`/api/products?id=${id}`, {
-                method: "DELETE",
-            });
-
-            if (res.ok) {
-                setProductList(productList.filter((p) => p.id !== id));
-            } else {
-                alert("Failed to delete product");
-            }
-        }
-    };
-
     return (
         <div className="container mx-auto px-4 py-8">
-            <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-                <Link
-                    href="/admin/products/new"
-                    className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary-dark transition-colors"
-                >
-                    Add New Product
-                </Link>
+            <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <p className="text-sm font-medium text-gray-500">Total Sales</p>
+                    <p className="text-2xl font-bold text-primary">${stats.totalSales.toLocaleString()}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <p className="text-sm font-medium text-gray-500">Total Orders</p>
+                    <p className="text-2xl font-bold text-primary">{stats.totalOrders}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <p className="text-sm font-medium text-gray-500">Total Products</p>
+                    <p className="text-2xl font-bold text-primary">{stats.totalProducts}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <p className="text-sm font-medium text-gray-500">Total Customers</p>
+                    <p className="text-2xl font-bold text-primary">{stats.totalCustomers}</p>
+                </div>
             </div>
 
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                        <tr>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-                            <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                        {productList.map((product) => (
-                            <tr key={product.id}>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <div className="flex items-center">
-                                        {/* Optional Image */}
-                                        <div className="ml-4">
-                                            <div className="text-sm font-medium text-gray-900">{product.name}</div>
-                                            <div className="text-sm text-gray-500">{product.name_th}</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap">
-                                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                        {product.category}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ${product.price}
-                                </td>
-                                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <Link
-                                        href={`/admin/products/edit/${product.id}`}
-                                        className="text-indigo-600 hover:text-indigo-900 mr-4"
-                                    >
-                                        Edit
-                                    </Link>
-                                    <button
-                                        onClick={() => handleDelete(product.id)}
-                                        className="text-red-600 hover:text-red-900"
-                                    >
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            {/* Recent Activity / Quick Actions */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <div className="flex justify-between items-center mb-4">
+                        <h2 className="text-lg font-bold">Recent Orders</h2>
+                        <Link href="/admin/orders" className="text-sm text-primary hover:underline">View All</Link>
+                    </div>
+                    <div className="space-y-4">
+                        <p className="text-gray-500 text-sm">No recent orders (Mock).</p>
+                        {/* Placeholder for order list */}
+                    </div>
+                </div>
+
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h2 className="text-lg font-bold mb-4">Quick Actions</h2>
+                    <div className="flex flex-col space-y-3">
+                        <Link href="/admin/products/new" className="text-primary hover:underline">Add New Product</Link>
+                        <Link href="/admin/orders" className="text-primary hover:underline">Manage Orders</Link>
+                        <Link href="/admin/customers" className="text-primary hover:underline">View Customers</Link>
+                    </div>
+                </div>
             </div>
         </div>
     );

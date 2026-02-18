@@ -63,8 +63,12 @@ export default function AdminOrdersPage() {
                                             {new Date(order.createdAt).toLocaleDateString()}
                                         </td>
                                         <td className="px-6 py-4">
-                                            <div className="font-medium">{order.customer?.firstName} {order.customer?.lastName}</div>
-                                            <div className="text-xs text-gray-500">{order.customer?.email}</div>
+                                            <div className="font-medium">
+                                                {order.shippingInfo?.firstName || order.user?.name || 'Guest'} {order.shippingInfo?.lastName || ''}
+                                            </div>
+                                            <div className="text-xs text-gray-500">
+                                                {order.shippingInfo?.email || order.user?.email || 'N/A'}
+                                            </div>
                                         </td>
                                         <td className="px-6 py-4">
                                             <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium capitalize

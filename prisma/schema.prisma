@@ -62,10 +62,13 @@ model VerificationToken {
 model Product {
   id          String   @id @default(cuid())
   name        String
+  name_th     String?
   description String?
+  description_th String?
   price       Float
   category    String?
   benefits    String? // JSON string
+  benefits_th String? // JSON string
   image       String?
   stock       Int      @default(0)
   status      String   @default("available") // available, preorder, discontinued

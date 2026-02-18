@@ -7,10 +7,22 @@ export const metadata = {
     description: "Browse our full catalog of premium research peptides. BPC-157, TB-500, CJC-1295, and more.",
 };
 
+import { prisma } from '@/lib/prisma';
+
 async function getProducts() {
-    const filePath = path.join(process.cwd(), 'src', 'data', 'products.json');
-    const fileContents = await fs.readFile(filePath, 'utf8');
-    return JSON.parse(fileContents);
+    const products = await prisma.product.findMany({
+        where: { stock: { gt: 0 } }, // Optional: only show in-stock? Or all? Let's show all for now but maybe filtered. Standardize on showing all.
+        orderBy: { createdAt: 'desc' }
+    });
+
+    // Parse JSON fields
+    return products.map(product => ({
+        ...product,
+        benefits: JSON.parse(product.benefits || '[]'),
+        benefits_th: JSON.parse(product.benefits_th || '[]'),
+        variants: JSON.parse(product.variants || '[]'),
+        specs: JSON.parse(product.specs || '{}')
+    }));
 }
 
 export default async function ProductsPage() {

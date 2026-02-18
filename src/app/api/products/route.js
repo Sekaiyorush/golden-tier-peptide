@@ -1,81 +1,152 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { prisma } from '@/lib/prisma';
+import { getAuthSession } from '@/lib/auth-utils';
 
-const dataFilePath = path.join(process.cwd(), 'src/data/products.json');
-
-// Helper to read data
-const readData = () => {
-    const jsonData = fs.readFileSync(dataFilePath, 'utf8');
-    return JSON.parse(jsonData);
-};
-
-// Helper to write data
-const writeData = (data) => {
-    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
+// Helper to parse JSON fields
+const parseProduct = (product) => {
+    try {
+        const specs = product.specs ? JSON.parse(product.specs) : {};
+        return {
+            ...product,
+            benefits: product.benefits ? JSON.parse(product.benefits) : [],
+            benefits_th: product.benefits_th ? JSON.parse(product.benefits_th) : [],
+            variants: product.variants ? JSON.parse(product.variants) : [],
+            specs,
+            ...specs // Spread specs to top level for legacy/frontend compatibility (e.g. product.purity)
+        };
+    } catch (e) {
+        console.error("Error parsing product JSON fields", e);
+        return product;
+    }
 };
 
 export async function GET(req) {
     try {
         const { searchParams } = new URL(req.url);
         const id = searchParams.get('id');
-        const products = readData();
 
         if (id) {
-            const product = products.find((p) => p.id === id);
+            const product = await prisma.product.findUnique({
+                where: { id }
+            });
             if (!product) {
                 return NextResponse.json({ error: 'Product not found' }, { status: 404 });
             }
-            return NextResponse.json(product);
+            return NextResponse.json(parseProduct(product));
         }
 
-        return NextResponse.json(products);
+        const products = await prisma.product.findMany({
+            orderBy: { createdAt: 'desc' }
+        });
+
+        // Parse JSON fields for all products
+        const parsedProducts = products.map(parseProduct);
+
+        return NextResponse.json(parsedProducts);
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to read data' }, { status: 500 });
+        console.error("Product GET Error:", error);
+        return NextResponse.json({ error: 'Failed to fetch products' }, { status: 500 });
     }
 }
 
+const SPEC_FIELDS = ['purity', 'form', 'quantity', 'sequence', 'cas_number', 'molar_mass'];
+
 export async function POST(req) {
     try {
+        const session = await getAuthSession();
+        if (!session || session.user.role !== 'admin') {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
         const body = await req.json();
-        const products = readData();
 
-        // Simple ID generation if not provided
-        const newProduct = {
-            ...body,
-            id: body.id || `prod-${Date.now()}`
-        };
+        // Extract known non-schema fields to specs
+        const specs = body.specs || {};
+        SPEC_FIELDS.forEach(field => {
+            if (body[field] !== undefined) {
+                specs[field] = body[field];
+                delete body[field];
+            }
+        });
 
-        products.push(newProduct);
-        writeData(products);
+        // Extract JSON fields and stringify
+        const { benefits, benefits_th, variants, specs: _ignored, ...rest } = body;
 
-        return NextResponse.json(newProduct, { status: 201 });
+        const newProduct = await prisma.product.create({
+            data: {
+                ...rest,
+                benefits: JSON.stringify(benefits || []),
+                benefits_th: JSON.stringify(benefits_th || []),
+                variants: JSON.stringify(variants || []),
+                specs: JSON.stringify(specs),
+                stock: parseInt(rest.stock || 0),
+                price: parseFloat(rest.price) // Ensure float
+            }
+        });
+
+        return NextResponse.json(parseProduct(newProduct), { status: 201 });
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to save data' }, { status: 500 });
+        console.error("Product POST Error:", error);
+        return NextResponse.json({ error: error.message || 'Failed to create product' }, { status: 500 });
     }
 }
 
 export async function PUT(req) {
     try {
-        const body = await req.json();
-        const products = readData();
-        const index = products.findIndex((p) => p.id === body.id);
-
-        if (index === -1) {
-            return NextResponse.json({ error: 'Product not found' }, { status: 404 });
+        const session = await getAuthSession();
+        if (!session || session.user.role !== 'admin') {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        products[index] = { ...products[index], ...body };
-        writeData(products);
+        const body = await req.json();
+        const { id } = body;
 
-        return NextResponse.json(products[index]);
+        if (!id) {
+            return NextResponse.json({ error: 'Product ID required' }, { status: 400 });
+        }
+
+        // Extract known non-schema fields to specs
+        const specs = body.specs || {};
+        SPEC_FIELDS.forEach(field => {
+            if (body[field] !== undefined) {
+                specs[field] = body[field];
+                delete body[field];
+            }
+        });
+
+        const { benefits, benefits_th, variants, specs: _ignored, id: _id, ...rest } = body;
+
+        // Clean up system fields from rest if they exist
+        delete rest.createdAt;
+        delete rest.updatedAt;
+
+        const updatedProduct = await prisma.product.update({
+            where: { id },
+            data: {
+                ...rest,
+                benefits: JSON.stringify(benefits || []),
+                benefits_th: JSON.stringify(benefits_th || []),
+                variants: JSON.stringify(variants || []),
+                specs: JSON.stringify(specs),
+                stock: parseInt(rest.stock || 0),
+                price: parseFloat(rest.price)
+            }
+        });
+
+        return NextResponse.json(parseProduct(updatedProduct));
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to update product' }, { status: 500 });
+        console.error("Product PUT Error:", error);
+        return NextResponse.json({ error: error.message || 'Failed to update product' }, { status: 500 });
     }
 }
 
 export async function DELETE(req) {
     try {
+        const session = await getAuthSession();
+        if (!session || session.user.role !== 'admin') {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
         const { searchParams } = new URL(req.url);
         const id = searchParams.get('id');
 
@@ -83,17 +154,13 @@ export async function DELETE(req) {
             return NextResponse.json({ error: 'Product ID is required' }, { status: 400 });
         }
 
-        const products = readData();
-        const filteredProducts = products.filter((p) => p.id !== id);
-
-        if (products.length === filteredProducts.length) {
-            return NextResponse.json({ error: 'Product not found' }, { status: 404 });
-        }
-
-        writeData(filteredProducts);
+        await prisma.product.delete({
+            where: { id }
+        });
 
         return NextResponse.json({ message: 'Product deleted successfully' });
     } catch (error) {
+        console.error("Product DELETE Error:", error);
         return NextResponse.json({ error: 'Failed to delete product' }, { status: 500 });
     }
 }

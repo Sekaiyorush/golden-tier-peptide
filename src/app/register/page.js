@@ -8,6 +8,7 @@ export default function RegisterPage() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [agreed, setAgreed] = useState(false);
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
@@ -15,6 +16,12 @@ export default function RegisterPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
+
+        if (!agreed) {
+            setError("You must agree to the Research Use Only terms to register.");
+            return;
+        }
+
         setIsLoading(true);
 
         try {
@@ -105,6 +112,25 @@ export default function RegisterPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+                        </div>
+                    </div>
+
+                    <div className="flex items-start mt-4">
+                        <div className="flex h-5 items-center">
+                            <input
+                                id="agreed"
+                                name="agreed"
+                                type="checkbox"
+                                required
+                                className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                                checked={agreed}
+                                onChange={(e) => setAgreed(e.target.checked)}
+                            />
+                        </div>
+                        <div className="ml-3 text-sm">
+                            <label htmlFor="agreed" className="font-medium text-gray-700">
+                                I understand that these products are for <span className="font-bold text-red-600">Research Use Only</span> and I agree to the Terms of Service.
+                            </label>
                         </div>
                     </div>
 

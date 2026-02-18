@@ -104,6 +104,29 @@ export default function NewProductPage() {
                 </div>
 
                 <div>
+                    <label className="block text-sm font-medium text-gray-700">Stock</label>
+                    <input
+                        type="number"
+                        name="stock"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm border p-2"
+                        value={formData.stock || 0}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                <div className="md:col-span-2">
+                    <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                    <input
+                        type="text"
+                        name="image"
+                        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary sm:text-sm border p-2"
+                        value={formData.image || ''}
+                        onChange={handleChange}
+                        placeholder="/placeholder?text=Product"
+                    />
+                </div>
+
+                <div>
                     <label className="block text-sm font-medium text-gray-700">Description (English)</label>
                     <textarea
                         name="description"

@@ -1,38 +1,48 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'src/data/orders.json');
-
-// Helper to read data
-const readData = () => {
-    if (!fs.existsSync(dataFilePath)) {
-        return [];
-    }
-    const jsonData = fs.readFileSync(dataFilePath, 'utf8');
-    try {
-        return JSON.parse(jsonData);
-    } catch (error) {
-        return [];
-    }
-};
-
-// Helper to write data
-const writeData = (data) => {
-    fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
-};
+import { prisma } from '@/lib/prisma';
+import { getAuthSession } from '@/lib/auth-utils';
+import { decrypt } from '@/lib/encryption';
 
 export async function GET(req, { params }) {
     try {
         const { id } = await params;
-        const orders = readData();
-        const order = orders.find((o) => o.id === id);
+        const session = await getAuthSession();
+        if (!session || session.user.role !== 'admin') {
+            // Check if it's the user's own order
+            const orderCheck = await prisma.order.findUnique({
+                where: { id },
+                select: { userId: true }
+            });
+            if (!orderCheck || orderCheck.userId !== session?.user?.id) {
+                return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+            }
+        }
+
+        const order = await prisma.order.findUnique({
+            where: { id },
+            include: { user: { select: { name: true, email: true } } }
+        });
 
         if (!order) {
             return NextResponse.json({ error: 'Order not found' }, { status: 404 });
         }
 
-        return NextResponse.json(order);
+        // Decrypt shipping info & Parse items
+        let shippingInfo = null;
+        let items = [];
+        try {
+            shippingInfo = JSON.parse(decrypt(order.shippingInfo));
+        } catch (e) {
+            console.error("Decryption failed", e);
+        }
+
+        try {
+            items = JSON.parse(order.items);
+        } catch (e) {
+            console.error("Items parsing failed", e);
+        }
+
+        return NextResponse.json({ ...order, shippingInfo, items });
     } catch (error) {
         return NextResponse.json({ error: 'Failed to fetch order' }, { status: 500 });
     }
@@ -41,19 +51,20 @@ export async function GET(req, { params }) {
 export async function PUT(req, { params }) {
     try {
         const { id } = await params;
-        const body = await req.json();
-        const orders = readData();
-        const index = orders.findIndex((o) => o.id === id);
-
-        if (index === -1) {
-            return NextResponse.json({ error: 'Order not found' }, { status: 404 });
+        const session = await getAuthSession();
+        if (!session || session.user.role !== 'admin') {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        // Update fields, preventing overwrite of immutable ones if needed
-        orders[index] = { ...orders[index], ...body };
-        writeData(orders);
+        const body = await req.json();
+        const { status } = body;
 
-        return NextResponse.json(orders[index]);
+        const updatedOrder = await prisma.order.update({
+            where: { id },
+            data: { status }
+        });
+
+        return NextResponse.json(updatedOrder);
     } catch (error) {
         return NextResponse.json({ error: 'Failed to update order' }, { status: 500 });
     }

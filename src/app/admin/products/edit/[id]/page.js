@@ -109,21 +109,27 @@ export default function EditProductPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // Filter out system fields that shouldn't be manually updated or cause type issues
+            const { createdAt, updatedAt, id, ...rest } = formData;
+
             const res = await fetch('/api/products', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    ...formData,
+                    id: formData.id, // Explicitly pass ID
+                    ...rest,
                     price: parseFloat(formData.price),
+                    stock: parseInt(formData.stock || 0),
                     variants: formData.variants.map(v => ({ ...v, price: parseFloat(v.price) }))
                 })
             });
 
             if (res.ok) {
-                router.push('/admin');
+                router.push('/admin/products'); // Redirect to list
                 router.refresh();
             } else {
-                alert("Failed to update product");
+                const err = await res.json();
+                alert(`Failed to update product: ${err.error}`);
             }
         } catch (error) {
             console.error(error);
@@ -178,6 +184,10 @@ export default function EditProductPage() {
                         <div>
                             <label className="block text-sm font-medium text-gray-700">Base Price (USD)</label>
                             <input type="number" name="price" required step="0.01" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-2" value={formData.price} onChange={handleChange} />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700">Stock</label>
+                            <input type="number" name="stock" className="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-2" value={formData.stock || 0} onChange={handleChange} />
                         </div>
                         <div className="md:col-span-2">
                             <label className="block text-sm font-medium text-gray-700">Image URL</label>

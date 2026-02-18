@@ -13,11 +13,14 @@ export const metadata = {
   description: "High-purity peptides for laboratory research. BPC-157, TB-500, CJC-1295, and more.",
 };
 
+import AgeVerificationModal from "@/components/AgeVerificationModal";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <SessionProviderWrapper>
+          <AgeVerificationModal />
           <LanguageProvider>
             <CartProvider>
               <Header />
